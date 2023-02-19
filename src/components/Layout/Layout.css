@@ -7,6 +7,10 @@ header {
   justify-content: center;
   align-items: center;
   height: 100px;
+  background-color: #0080FF;
+  color: #FFF;
+  font-size: 25px;
+  font-weight: bolder;
 }
 
 #logo {

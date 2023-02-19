@@ -1,7 +1,14 @@
 import React from "react";
 import './CryptoBlock.css';
 import { formatToUsdPrice } from '../../utils/priceFormatter';
-import { Crypto } from '../Test/Test';
+
+export interface Crypto {
+  id: string;
+  name: string;
+  symbol: string;
+  price: number;
+  image: string;
+}
 
 export interface Props {
   crypto: Crypto;
@@ -12,8 +19,8 @@ const CryptoBlock: React.FC<Props> = ({ crypto }) => {
     <div className="crypto-block">
       <img className="crypto-block-image" src={ crypto.image } />
       <div className="crypto-block-content">
-        <div>{ crypto.name }</div>
-        <div>{ formatToUsdPrice(crypto.price) }</div>
+        <div className="crypto-block-name">{ crypto.name }</div>
+        <div className="crypto-block-price">{ formatToUsdPrice(crypto.price) }</div>
       </div>
     </div>
   );
