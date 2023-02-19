@@ -1,0 +1,21 @@
+#layout {
+  height: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#logo {
+  font-size: 20px;
+}
+
+main {
+  padding-top: 40px;
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
