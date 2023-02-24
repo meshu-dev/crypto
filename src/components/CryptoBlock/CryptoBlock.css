@@ -1,9 +1,12 @@
 .crypto-block {
+  position: relative;
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-  padding: 20px 15px;
-  width: 170px;
+  padding: 10px 15px;
+  width: 185px;
+  height: 70px;
+  align-items: center;
   background-color: #FFF;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
 }
@@ -19,5 +22,20 @@
 }
 
 .crypto-block-name {
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+}
+
+.crypto-block-rank {
+  position: absolute;
+  top: -8px;
+  left: -10px;
+  border-radius: 6px;
+  background-color: lightgray;
+  padding: 2px;
+  font-weight: bold;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
 }

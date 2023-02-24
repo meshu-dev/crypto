@@ -1,9 +1,15 @@
-import { AnyAction } from '@reduxjs/toolkit';
 import { Dispatch } from 'react';
+import { useSelector } from 'react-redux';
+import { AnyAction } from '@reduxjs/toolkit';
 import { io, Socket } from 'socket.io-client';
-import { cryptoAction } from '../store/crypto-slice';
+import { RootState } from '../store/store';
+import { cryptoAction } from '../store/cryptoSlice';
 
-export const socket = io(
+// const apiUrl: string = process.env.REACT_APP_API_URL;
+
+//const cryptoState = useSelector((state: RootState) => state.crypto);
+
+export const socket: Socket = io(
   'http://127.0.0.1:3000/',
   {
     reconnectionDelay: 1000,
@@ -15,16 +21,15 @@ export const socket = io(
   }
 );
 
-export const addCoinsEvent = (dispatch: Dispatch<AnyAction>, socket: Socket) => {
-  socket.on('coins', (coins: Array<Crypto>) => {
-    coins = coins.slice(0, 10);
-    console.log('COINS', coins);
-
-    dispatch(cryptoAction.setCryptos(coins));   
+export const addCoinsEvent = (dispatch: Dispatch<AnyAction>, socket: Socket): void => {
+  socket.on('topTenCoins', (coins: Array<Crypto>) => {
+    dispatch(cryptoAction.setCryptos(coins));
+    console.log('SocketIO Call');
   });
 }
 
-export const addOffActions = (socket: Socket) => {
+export const addOffActions = (socket: Socket): void => {
   socket.off('connect');
   socket.off('disconnect');
+  socket.close();
 }

@@ -8,6 +8,7 @@ export interface Crypto {
   symbol: string;
   price: number;
   image: string;
+  rank: number;
 }
 
 export interface Props {
@@ -17,6 +18,7 @@ export interface Props {
 const CryptoBlock: React.FC<Props> = ({ crypto }) => {
   return (
     <div className="crypto-block">
+      <span className="crypto-block-rank">{ crypto.rank }</span>
       <img className="crypto-block-image" src={ crypto.image } />
       <div className="crypto-block-content">
         <div className="crypto-block-name">{ crypto.name }</div>
