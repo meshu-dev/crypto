@@ -1,25 +1,28 @@
 import { Dispatch } from 'react';
-import { useSelector } from 'react-redux';
 import { AnyAction } from '@reduxjs/toolkit';
 import { io, Socket } from 'socket.io-client';
-import { RootState } from '../store/store';
 import { cryptoAction } from '../store/cryptoSlice';
 
-// const apiUrl: string = process.env.REACT_APP_API_URL;
+export const createSocket = (): Socket => {
+  const url: string = process.env.REACT_APP_API_URL || '';
 
-//const cryptoState = useSelector((state: RootState) => state.crypto);
-
-export const socket: Socket = io(
-  'http://127.0.0.1:3000/',
-  {
-    reconnectionDelay: 1000,
-    reconnection: true,
-    transports: ['websocket'],
-    agent: false,
-    upgrade: false,
-    rejectUnauthorized: false
+  if (url) {
+    const socket: Socket = io(
+      url,
+      {
+        reconnectionDelay: 1000,
+        reconnection: true,
+        transports: ['websocket'],
+        agent: false,
+        upgrade: false,
+        rejectUnauthorized: false
+      }
+    );
+    return socket;
+  } else {
+    throw Error('SocketIO url unavailble');
   }
-);
+}
 
 export const addCoinsEvent = (dispatch: Dispatch<AnyAction>, socket: Socket): void => {
   socket.on('topTenCoins', (coins: Array<Crypto>) => {

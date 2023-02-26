@@ -39,7 +39,7 @@
 
 .crypto-view-rankwrapper {
   font-weight: bold;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
 }
 
 .crypto-view-rank {
@@ -50,7 +50,7 @@
 
 @media (max-width: 1200px) {
   .crypto-view-rankwrapper{
-    margin: 0;
+    margin: 20px 0 0 0;
   }
 
   .crypto-view-top {
