@@ -34,5 +34,5 @@ export const addCoinsEvent = (dispatch: Dispatch<AnyAction>, socket: Socket): vo
 export const addOffActions = (socket: Socket): void => {
   socket.off('connect');
   socket.off('disconnect');
-  socket.close();
+  //socket.close();
 }
