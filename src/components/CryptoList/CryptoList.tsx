@@ -13,11 +13,11 @@ const CryptoList: React.FC = () => {
   const cryptoState = useSelector((state: RootState) => state.crypto);
 
   useEffect(() => {
-    if (cryptoState.cryptos.length == 0 && cryptoRows.length > 0) {
+    if (cryptoState.cryptos.length === 0 && cryptoRows.length > 0) {
       dispatch(cryptoAction.setCryptos(cryptoRows));
       dispatch(cryptoAction.setIsLoaded(true));
     }
-  }, [cryptoRows]); 
+  }, [cryptoState, dispatch, cryptoRows]); 
 
   
   let cryptoBlocks: any = [];

@@ -12,14 +12,14 @@ const CryptoView: React.FC = () => {
   const params = useParams();
   let { data: cryptoRows = [] } = useGetTopTenQuery();
   const cryptoState = useSelector((state: RootState) => state.crypto);
-  const crypto = cryptoState.cryptos.find(crypto => crypto.id == params.id);
+  const crypto = cryptoState.cryptos.find(crypto => crypto.id === params.id);
 
   useEffect(() => {
-    if (cryptoState.cryptos.length == 0 && cryptoRows.length > 0) {
+    if (cryptoState.cryptos.length === 0 && cryptoRows.length > 0) {
       dispatch(cryptoAction.setCryptos(cryptoRows));
       dispatch(cryptoAction.setIsLoaded(true));
     }
-  }, [cryptoRows]);
+  }, [cryptoState, dispatch, cryptoRows]);
 
   let template = null;
 
@@ -27,7 +27,7 @@ const CryptoView: React.FC = () => {
     template = 
       <>
         <div className="crypto-view">
-          <img className="crypto-view-image" src={ crypto.image } />
+          <img className="crypto-view-image" src={ crypto.image } alt={ `${crypto.name} icon` } />
           <div className="crypto-view-content">
             <div className="crypto-view-top">
               <div className="crypto-view-name">{ crypto.name }</div>

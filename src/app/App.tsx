@@ -25,7 +25,7 @@ function App() {
       };
     }
     return;
-  }, [cryptoState.isLoaded]);
+  }, [cryptoState, dispatch, cryptoState.isLoaded]);
 
   return (
     <div className="App">
