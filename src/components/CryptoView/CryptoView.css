@@ -73,3 +73,13 @@
     font-size: 65px;
   }
 }
+
+@media (max-width: 600px) {
+  .crypto-view {
+    font-size: 30px;
+  }
+
+  .crypto-view-price {
+    font-size: 40px;
+  }
+}
