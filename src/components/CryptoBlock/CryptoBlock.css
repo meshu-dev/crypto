@@ -41,3 +41,9 @@
   height: 23px;
   line-height: 23px;
 }
+
+@media (max-width: 469px) {
+  .crypto-block {
+    width: auto;
+  }
+}

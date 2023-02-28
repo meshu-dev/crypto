@@ -5,3 +5,10 @@
   justify-content: center;
   padding: initial;
 }
+
+@media (max-width: 469px) {
+  #crypto-list {
+    grid-template-columns: auto;
+    justify-content: stretch;
+  }
+}

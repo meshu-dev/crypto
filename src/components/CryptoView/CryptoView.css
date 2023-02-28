@@ -59,12 +59,13 @@
 }
 
 @media (max-width: 1000px) {
-  .crypto-view-content {
-    min-height: 350px;
-  }
-
   .crypto-view {
     flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .crypto-view-content {
+    min-height: 350px;
   }
 }
 
@@ -77,6 +78,15 @@
 @media (max-width: 600px) {
   .crypto-view {
     font-size: 30px;
+  }
+
+  .crypto-view-image {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .crypto-view-content {
+    margin-left: 0;
   }
 
   .crypto-view-price {
