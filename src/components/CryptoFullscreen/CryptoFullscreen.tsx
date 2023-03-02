@@ -17,7 +17,6 @@ const CryptoFullscreen: React.FC = () => {
     <div className="crypto-fullscreenbtn-wrapper">
       <button
         className="crypto-fullscreenbtn"
-        role="button"
         onClick={ buttonClick }>
           Fullscreen
       </button>
