@@ -27,21 +27,21 @@ const CryptoView: React.FC = () => {
 
   let template = null;
 
-  let content = 
-    <>
-      <img className="crypto-view-image" src={ crypto.image } alt={ `${crypto.name} icon` } />
-      <div className="crypto-view-content">
-        <div className="crypto-view-top">
-          <div className="crypto-view-name">{ crypto.name }</div>
-          <div className="crypto-view-rankwrapper">
-            <span className="crypto-view-rank">Rank #{ crypto.rank }</span>
-          </div>
-        </div>
-        <div className="crypto-view-price">{ formatToUsdPrice(crypto.price) }</div>
-      </div>
-    </>;
-
   if (crypto) {
+    let content = 
+      <>
+        <img className="crypto-view-image" src={ crypto.image } alt={ `${crypto.name} icon` } />
+        <div className="crypto-view-content">
+          <div className="crypto-view-top">
+            <div className="crypto-view-name">{ crypto.name }</div>
+            <div className="crypto-view-rankwrapper">
+              <span className="crypto-view-rank">Rank #{ crypto.rank }</span>
+            </div>
+          </div>
+          <div className="crypto-view-price">{ formatToUsdPrice(crypto.price) }</div>
+        </div>
+      </>;
+
     if (mainState.isFullscreen) {
       template = 
         <div className="crypto-view-page crypto-view-fullscreen">
