@@ -1,11 +1,23 @@
-.crypto-view {
+.crypto-view-page {
   display: flex;
   flex-direction: row;
   border-radius: 16px;
   padding: 50px;
+}
+
+.crypto-view {
   align-items: center;
   background-color: #FFF;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  text-decoration: none;
+  color: #000;
+  font-size: 60px;
+  margin: 0 20px;
+}
+
+.crypto-view-fullscreen {
+  width: 100%;
+  align-items: center;
   text-decoration: none;
   color: #000;
   font-size: 60px;

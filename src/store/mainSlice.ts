@@ -5,6 +5,7 @@ export const mainSlice = createSlice({
   initialState: {
     isLoading: true,
     statusMsg: null,
+    isFullscreen: false
   },
   reducers: {
     startLoading: (state) => {
@@ -18,6 +19,9 @@ export const mainSlice = createSlice({
     },
     clearStatusMsg: (state) => {
       state.statusMsg = null;
+    },
+    toggleFullscreen: (state, action) => {
+      state.isFullscreen = action.payload;
     }
   }
 });
