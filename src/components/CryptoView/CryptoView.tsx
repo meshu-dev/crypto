@@ -26,36 +26,26 @@ const CryptoView: React.FC = () => {
   }, [cryptoState, dispatch, cryptoRows]);
 
   let template = null;
-
+ 
   if (crypto) {
-    let content = 
-      <>
-        <img className="crypto-view-image" src={ crypto.image } alt={ `${crypto.name} icon` } />
-        <div className="crypto-view-content">
-          <div className="crypto-view-top">
-            <div className="crypto-view-name">{ crypto.name }</div>
-            <div className="crypto-view-rankwrapper">
-              <span className="crypto-view-rank">Rank #{ crypto.rank }</span>
-            </div>
-          </div>
-          <div className="crypto-view-price">{ formatToUsdPrice(crypto.price) }</div>
-        </div>
-      </>;
+    const viewClass = mainState.isFullscreen ? 'crypto-view-fullscreen' : 'crypto-view';
 
-    if (mainState.isFullscreen) {
-      template = 
-        <div className="crypto-view-page crypto-view-fullscreen">
-          { content }
-        </div>;
-    } else {
-      template = 
-        <>
-          <div className="crypto-view-page crypto-view">
-            { content }
+    template =
+      <>
+        <div className={ `crypto-view-page  ${viewClass}` }>
+          <img className="crypto-view-image" src={ crypto.image } alt={ `${crypto.name} icon` } />
+          <div className="crypto-view-content">
+            <div className="crypto-view-top">
+              <div className="crypto-view-name">{ crypto.name }</div>
+              <div className="crypto-view-rankwrapper">
+                <span className="crypto-view-rank">Rank #{ crypto.rank }</span>
+              </div>
+            </div>
+            <div className="crypto-view-price">{ formatToUsdPrice(crypto.price) }</div>
           </div>
-          <CryptoFullscreen />
-        </>;
-    }
+        </div>
+        <CryptoFullscreen />
+      </>;
   }
   return (template);
 }

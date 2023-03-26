@@ -20,8 +20,8 @@ export const mainSlice = createSlice({
     clearStatusMsg: (state) => {
       state.statusMsg = null;
     },
-    toggleFullscreen: (state, action) => {
-      state.isFullscreen = action.payload;
+    toggleFullscreen: (state) => {
+      state.isFullscreen = !state.isFullscreen;
     }
   }
 });

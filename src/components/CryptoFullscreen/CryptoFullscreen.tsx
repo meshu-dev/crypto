@@ -9,8 +9,13 @@ const CryptoFullscreen: React.FC = () => {
   const mainState = useSelector((state: RootState) => state.main);
 
   const buttonClick = () => {
-    let fullScreenMode = mainState.isFullscreen === true ? false : true;
-    dispatch(mainAction.toggleFullscreen(fullScreenMode));
+    dispatch(mainAction.toggleFullscreen());
+
+    if (mainState.isFullscreen) {
+      document.exitFullscreen();
+    } else {
+      document.documentElement.requestFullscreen();
+    }
   }
 
   return (
@@ -18,7 +23,7 @@ const CryptoFullscreen: React.FC = () => {
       <button
         className="crypto-fullscreenbtn"
         onClick={ buttonClick }>
-          Fullscreen
+          { mainState.isFullscreen ? 'Exit fullscreen' : 'Fullscreen' }
       </button>
     </div>
   );
