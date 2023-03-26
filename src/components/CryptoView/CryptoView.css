@@ -107,3 +107,25 @@
     font-size: 40px;
   }
 }
+
+@media (max-width: 780px) and (max-height: 400px)  {
+  .crypto-view, .crypto-view-fullscreen {
+    flex-direction: row;
+    padding: 0 50px;
+    font-size: 30px;
+  }
+
+  .crypto-view-image {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .crypto-view-content {
+    justify-content: normal;
+    min-height: auto;
+  }
+
+  .crypto-view-price {
+    font-size: 40px;
+  }
+}
