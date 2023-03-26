@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 1200px) {
-  .crypto-view-rankwrapper{
+  .crypto-view-rankwrapper {
     margin: 20px 0 0 0;
   }
 
@@ -71,7 +71,7 @@
 }
 
 @media (max-width: 1000px) {
-  .crypto-view {
+  .crypto-view, .crypto-view-fullscreen {
     flex-direction: column;
     padding: 50px 0;
   }
@@ -88,7 +88,7 @@
 }
 
 @media (max-width: 600px) {
-  .crypto-view {
+  .crypto-view, .crypto-view-fullscreen {
     font-size: 30px;
   }
 

@@ -18,12 +18,14 @@ const CryptoFullscreen: React.FC = () => {
     }
   }
 
+  const viewClass = mainState.isFullscreen ? 'crypto-fullscreenbtn-fullscreen' : '';
+
   return (
-    <div className="crypto-fullscreenbtn-wrapper">
+    <div className={ `crypto-fullscreenbtn-wrapper ${viewClass}` }>
       <button
         className="crypto-fullscreenbtn"
         onClick={ buttonClick }>
-          { mainState.isFullscreen ? 'Exit fullscreen' : 'Fullscreen' }
+          { mainState.isFullscreen ? 'X' : 'Fullscreen' }
       </button>
     </div>
   );

@@ -37,3 +37,15 @@
 .crypto-fullscreenbtn:hover {
   background-color: #1C84FF;
 }
+
+.crypto-fullscreenbtn-fullscreen {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  margin: 0;
+}
+
+.crypto-fullscreenbtn-fullscreen .crypto-fullscreenbtn {
+  font-weight: bolder;
+  padding: 10px 15px;
+}
